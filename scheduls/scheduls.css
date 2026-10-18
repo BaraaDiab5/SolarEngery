@@ -100,7 +100,7 @@
     font-weight: bold;
     margin: 20px 0px 10px 0px;
 }
-.scheduls .content .table .table-head p{
+.scheduls .content .table .table-head div{
     white-space: nowrap;
     background-color: #554e4a;
     padding: 10px 10px ;
@@ -148,7 +148,8 @@
     flex: 1;
     flex-shrink: 0;
     height: 45px;
-    margin: 10px 7px 10px 36px;
+    /* margin: 10px 7px 10px 36px; */
+    margin: 10px;
     border-radius: var(--border-radius-sm);
     background-color:var(--text-white);
     transition: all .7s;
