@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+@media (min-width: 1050px) {
+     .login,.dashboard, .rooms , .controlRoom , .panels {
+        width: 500px;   
+        border-radius: 36px; 
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);  
+        margin: 0 auto;   
+    }
+    .controlRoom .content{
+        width: 90% !important;
+        padding: 0 40px !important;
+    }
+}
+:root{
+    /* Colors */
+  --bg-dark: #231f20;
+  --bg-darker: #191717;
+  --primary-orange: #e06d3b;
+  --primary-orange-hover: #c85a2b;
+  --text-white: #ffffff;
+  --card-light: #ececec;
+  --border-light: #c8c8c8;
+
+  /* Fonts & Sizing */
+  --font-family: 'Cairo', sans-serif;
+  --border-radius-sm: 10px;
+  --border-radius-md: 18px;
+  --border-radius-ms:32px;
+  --border-radius-lg: 50px;
+}
+/* ________________________Login Page___________________________ */
+.login,.dashboard, .rooms, .controlRoom , .panels {
+    background-color: var(--card-light);
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   justify-content: space-between;
+    align-items: center; 
+}
+.login .head{
+    width:100% ;
+    text-align: center;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    background-color: var(--bg-darker);
+    padding: 35px 20px;
+    color: var(--text-white);
+}
+.login .head div{
+    width: 120px;
+    height: 120px;
+    background-color: var(--card-light);
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login .head p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.login .content{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction:column ;
+    align-items: center;
+}
+.login .content .formcontent{
+    width: 80%;
+    display: flex;
+    align-items: center; 
+}
+.login .content .formcontent:focus-within .icon {
+    background-color: var(--primary-orange); 
+    border-color: var(--primary-orange); 
+}
+.login .content .formcontent:focus-within input {
+    border-color: var(--primary-orange); 
+    
+}
+.login .content input{
+    outline: none;
+    border: 1.5px solid var(--border-light);
+    border-left: none;
+    border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+    padding: 14px 35px 14px 35px;
+    margin: 8px 0;
+    width: 85%;
+    flex: 1;
+    transition: border-color 0.5s;
+}
+.login .content input::placeholder{
+    text-align: center;
+    color: var(--border-light);
+    font-size: var(--font-md);
+}
+.login .content .icon{
+    display: block;
+    width:45px;
+    padding: 7px;
+    background-color: var(--border-light);
+    border: 1.5px solid var(--border-light);
+    color: var(--text-white);
+    font-size: 20px;
+    text-align: center;
+    border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm) ;
+    transition: border-color 0.5s;
+}
+.login .content button{
+    border-radius: var(--border-radius-ms) ;
+    padding: 5px;
+    margin: 10px 10px 10px 25px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--text-white);
+    width: 80%;
+    background-color: var(--bg-darker);
+    border: none;
+    cursor: pointer;
+}
+.foot{
+    width: 100%;
+    margin-top: 10px;
+}
+.foot p{
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--bg-dark);
+    text-align: center;
+}
+.foot div{
+    width: 100%;
+    margin-top: 10px;
+    height: 60px;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    background-color: var(--bg-darker);
+}
+
+
+/* ________________________Dashboard Page___________________________ */
+.dashboard .foot{
+    margin-top: 0px;
+}
+.dashboard .foot div{
+    height: 25px;
+}
+.dashboard .head{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 25px;
+    border-radius: 0 0  var(--border-radius-lg) var(--border-radius-lg) ;
+    background-color: var(--bg-darker);
+}
+.dashboard .content{
+    text-align: right;
+    width: 100%;
+    padding: 0 20px;
+}
+.dashboard .content .welcome p:nth-child(1){
+    font-size: 24px;
+    color: #2b2623;
+    font-weight: 500;
+}
+.dashboard .content .welcome p:nth-child(2){
+    font-size: 28px;
+    color: #2b2623;
+    font-weight: 700;
+    margin-top: -10px;
+}
+.dashboard .content .welcome p:nth-child(3){
+    font-size: 13px;
+    color: #888;
+    margin-top: -7px;
+}
+.dashboard .content .con-bar{
+    width: 100%;
+    padding: 10px 15px ;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--border-radius-lg);
+    margin: 10px 0;
+}
+.dashboard .content .con-bar p:nth-child(2){
+    color: var(--primary-orange);
+    font-size: 18px;
+}
+.dashboard .content .con-bar p:nth-child(1){
+    background-color: var(--text-white);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+.dashboard .content .cardsDash{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+    
+}
+.dashboard .content .cardsDash .card{
+    height: 130px;
+    background-color: var(--card-light);
+    width: calc((85% - 20px )/2);
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all .5s;
+    overflow: hidden;
+}
+.dashboard .content .cardsDash .card:hover{
+    transform: scale(1.05);
+}
+.dashboard .content .cardsDash .card div{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 40px;
+    color: var(--bg-darker);
+}
+.dashboard .content .cardsDash .card div span{
+    font-size: 26px;
+    font-weight: bold;
+}
+.dashboard .content .cardsDash .card div .icon-dimmed{
+    color:var(--border-light);
+    font-size: 26px;
+    margin: 4px;
+}
+.dashboard .content .cardsDash .card p{
+    width: 100%;
+    background-color: var(--primary-orange);
+    color: var(--text-white);
+    text-align: center;
+    padding: 12px 5px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ______________________________rooms______________________________ */
+.rooms .foot div, .controlRoom .foot div , .panels .foot div {
+    background-color: var(--text-white);
+    height: 30px;
+}
+.rooms , .controlRoom , .panels{
+    background-color: var(--bg-dark);
+}
+.rooms .head , .controlRoom .head , .panels .head{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--text-white);
+    margin:15px 0;
+    text-align: right;
+}
+.rooms .head p , .controlRoom .head p , .panels .head p {
+    flex: 1;
+    font-size: 18px;
+    font-weight: 700;
+    padding-right: 20px;
+}
+.rooms .head .back , .controlRoom .head .back , .panels .head .back{
+    padding: 10px 10px 10px 25px;
+    font-size: 16px;
+    font-weight: 900;
+}
+.rooms .listRoom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 10px 20px;
+    color: var(--text-white);
+}
+.rooms .listRoom div{
+    width: 100%;
+    display: flex;
+    border: 2px solid var(--text-white);
+    border-radius: 8px;
+}
+.rooms .listRoom  p{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+.rooms .listRoom div div{
+    width: 45px;
+    height: 50px;
+    background-color:var(--text-white);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* ______________________controlRoom__________________________________ */
+.controlRoom{
+    position: relative;
+}
+.controlRoom .foot p{
+    color: var(--text-white);
+    opacity: 0.8;
+}
+.controlRoom .foot .img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: var(--text-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+.controlRoom .content{
+    width: 100%;
+    padding: 0 10px;
+}
+.controlRoom .content .select p{
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px
+}
+.controlRoom .content .select .listSelect {
+    background-color: var(--primary-orange);
+    width: 100%;
+    padding: 10px 15px 10px 100px ;
+    color: var(--text-white);
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: var(--border-radius-lg);
+    margin: 10px 0;
+}
+.listSelect::picker-icon {
+    transition: transform 0.2s;
+}
+.listSelect:open::picker-icon {
+    transform: rotate(180deg);
+}
+.listSelect, ::picker(select) {
+    appearance: base-select;
+}
+::picker(select)  {
+  background-color: var(--text-white) !important;
+  border-radius: 8px !important;
+  padding: 5px !important;
+  color: var(--bg-dark);
+  text-align: center;
+}
+.controlRoom .listSelect:focus {
+    outline: none;
+}
+.controlRoom .content .select .listSelect option {
+    border-bottom: 1px var(--primary-orange) solid;
+    display: flex;
+    justify-content: center;
+}
+.controlRoom .content .select .listSelect option:checked{
+    background-color: var(--primary-orange);
+}
+.controlRoom .content .time{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin: 30px 10px ;
+    color: var(--text-white);
+}
+.controlRoom .content .time div p{
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+.controlRoom .content .time input{
+    border: none;
+    border-radius: 20px;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.controlRoom .content .submit{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    color: var(--text-white);
+}
+.controlRoom .content .submit p{
+    font-size: 18px ;
+    background-color: var(--primary-orange);
+    border-radius: var(--border-radius-sm);
+    padding: 5px 20px; 
+    cursor: pointer;
+}
+.controlRoom .content .submit .message{
+    background-color: var(--text-white);
+    border-radius: var(--border-radius-sm);
+    color: var(--bg-dark);
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 20px; 
+    display: none;
+    position: absolute;
+    bottom: 26%;
+    left: 50%;
+    transform: translate(-50%, -26%);
+    animation: translate .7s ease;
+    transition: all .7s;
+}
+@keyframes translate {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+/* __________________________panels____________________________ */
+.panels .content .cycle{
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(85deg);
+    overflow: hidden;
+}
+.panels .content .part2 .cycle{
+    transform: rotate(-102deg);
+}
+
+.panels .content .cycle span{
+    width: 65px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--primary-orange);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+}
+.panels .content .cycle .white{
+    background-color: var(--text-white);
+    opacity: 0.2;
+}
+.panels .content .cycle span.orange {
+    opacity: 0.6;
+}
+.panels .content .part1, .panels .content .part2{
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+}
+.panels .content .part1 .content-part1, .panels .content .part2 .content-part2{
+    color: var(--text-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    pointer-events: none;
+    transition: all .7s;
+}
+.panels .content .part1 .content-part1 div , .panels .content .part2 .content-part2 div{
+    position: absolute;
+    top: 22%;
+    left: 50%;                         
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+.panels .content .part1 .content-part1 div p:nth-child(1), .panels .content .part2 .content-part2 div p:nth-child(1){
+    font-size: 30px;
+    color: var(--primary-orange);
+}
+.panels .content .part1 .content-part1 .number, .panels .content .part2 .content-part2 .number{
+    position: absolute;
+    top: 53%;
+}
+.panels .content .part1 .content-part1 p:nth-child(3), .panels .content .part2 .content-part2 p:nth-child(3) {
+    right: 0%;
+}
+.panels .content .con-bar{
+    margin-top: -65px;
+    margin-bottom: 30px ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    color: var(--text-white);
+}
+.panels .content .con-bar div:nth-child(1){
+    width: 60%;
+    background-color: var(--text-white);
+    height: 35px;
+    border-radius: 20px;
+    position: relative;
+    padding: 4px;
+}
+.panels .content .con-bar div:nth-child(1) .cycle-con-bar{
+    width: 27px;
+    height: 27px;
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+    position: absolute;
+    right: 4px;
+    transition: all .7s;
+}
+.panels .content .con-bar div:nth-child(2){
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold ;
+    font-size: 15px;
+}
+.panels .content .con-bar .text-labels {
+    cursor: pointer;
+    transition: all .7s;
+}
+.panels .content .con-bar div:nth-child(2) .active{
+    color: var(--primary-orange);
+}
+.panels .content .controls-section{
+    margin-top: -65px;
+    margin-bottom: 30px ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--text-white);
+}
+.panels .content .controls-section div{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.panels .content .controls-section .switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.panels .content .controls-section .switch{
+    cursor: pointer;
+    background-color: var(--text-white);
+    transition: .3s;
+    border-radius: 34px;
+    width: 65px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+}
+.panels .content .controls-section .switch div{
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    background-color: var(--primary-orange);
+    border-radius: 50%;
+    transition: all .7s;
+}
+.panels .content .controls-section .switch input:checked + div{
+    transform: translateX(28px);
+    background-color: #b5b5b5;
+}

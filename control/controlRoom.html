@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل غرفة معينة</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="controlRoom">
+        <div class="head">
+            <div class="back">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+            <p>تشغيل غرفة معينة</p>
+        </div>
+        <div class="content">
+            <div class="select">
+                <p>يرجى تحديد الغرفة</p>
+
+                <select class="listSelect">
+                    <!-- الغرف الإدارية (الطابق الأرضي والمسروق) -->
+                    <option value="غرفة الاجتماعات" class="active">غرفة الاجتماعات</option>
+                    <option value="العميد">العميد</option>
+                    <option value="أمين المستودع">أمين المستودع</option>
+                    <option value="شعبة الامتحانات">شعبة الامتحانات</option>
+                    <option value="الذاتية">الذاتية</option>
+                    <option value="رئيس شؤون الطلاب">رئيس شؤون الطلاب</option>
+                    <option value="ارشفة حاسوبية">أرشفة حاسوبية</option>
+                    <option value="الامتحانات">الامتحانات</option>
+                    <option value="التصوير والسحب">التصوير والسحب</option>
+                    <option value="شؤون الطلاب">شؤون الطلاب</option>
+                    <option value="رئيس شعبة الدراسات العليا">رئيس شعبة الدراسات العليا</option>
+                    <option value="مدير الدائرة">مدير الدائرة</option>
+                    <option value="مدير الديوان">مدير الديوان</option>
+                
+                    <!-- القاعات والمدرجات (الطابق الأول) -->
+                    <option value="مدرج الخوارزمي">مدرج الخوارزمي</option>
+                    <option value="المدرج (1)">المدرج (1)</option>
+                    <option value="القاعة (1)">القاعة (1)</option>
+                    <option value="القاعة (2)">القاعة (2)</option>
+                    <option value="القاعة (3)">القاعة (3)</option>
+                    <option value="القاعة (4)">القاعة (4)</option>
+                    <option value="القاعة (5) أ">القاعة (5) أ</option>
+                    <option value="القاعة (5) ب">القاعة (5) ب</option>
+                    <option value="القاعة (6)">القاعة (6)</option>
+                    <option value="الهيئة الطلابية">الهيئة الطلابية</option>
+                    <option value="المكتبة">المكتبة</option>
+                    <option value="Hyper">Hyper</option>
+                    <option value="مراقب الدوام">مراقب الدوام</option>
+                
+                    <!-- مخابر الطابق الأول -->
+                    <option value="مخبر رؤية حاسوبية">مخبر رؤية حاسوبية</option>
+                    <option value="مخبر الفيزياء">مخبر الفيزياء</option>
+                    <option value="مخبر icdl">مخبر ICDL</option>
+                    <option value="مخبر البنية">مخبر البنية</option>
+                    <option value="مخبر إتصالات">مخبر الاتصالات</option>
+                
+                    <!-- غرف الطابق المسروق للأول ومكاتب الطابق الثاني -->
+                    <option value="غرف خاصة للدكاترة">غرف خاصة للدكاترة</option>
+                    <option value="قاعة المطالعة">قاعة المطالعة</option>
+                    <option value="مكتب الهيئة الفنية">مكتب الهيئة الفنية</option>
+                    <option value="الهيئة المخبرية">الهيئة المخبرية</option>
+                    <option value="معتمد الرسوم">معتمد الرسوم</option>
+                
+                    <!-- مخابر الطابق الثاني -->
+                    <option value="مخبر هندسة برمجيات">مخبر هندسة برمجيات</option>
+                    <option value="مخبر الدارات">مخبر الدارات</option>
+                    <option value="مخبر الدارات المنطقية">مخبر الدارات المنطقية</option>
+                    <option value="مخبر الشبكات الحاسوبية">مخبر الشبكات الحاسوبية</option>
+                    <option value="مخبر البيانات والرسم الهندسي">مخبر البيانات والرسم الهندسي</option>
+                    <option value="مخبر الذكاء الصنعي">مخبر الذكاء الصنعي</option>
+                    <option value="مخبر المترجمات">مخبر المترجمات</option>
+                    <option value="مخبر نظم التشغيل">مخبر نظم التشغيل</option>
+                    <option value="مخبر قواعد المعطيات">مخبر قواعد المعطيات</option>
+                    <option value="مخبر قواعد معطيات موزعة">مخبر قواعد معطيات موزعة</option>
+                    <option value="مخبر البرمجة">مخبر البرمجة</option>
+                    <option value="مخبر plc المتحكم المنطقي المبرمج">مخبر PLC المتحكم المنطقي المبرمج</option>
+                    <option value="مخبر البحث العلمي">مخبر البحث العلمي</option>
+                
+                    <!-- المرافق والخدمات -->
+                    <option value="الممرات">الممرات</option>
+                    <option value="الحمامات">الحمامات</option>
+                </select>
+
+            </div>
+            <div class="time">
+                <div>
+                    <p>من الساعة</p>
+                    <input type="time" value="10:45" class="start"/>
+                </div>
+                <div>
+                    <p>حتى الساعة</p>
+                    <input type="time" value="12:30" class="end"/>
+                </div>
+            </div>
+            <div class="submit">
+                <p class="btnsave">حفظ</p>
+                <p class="btnback">تراجع</p>
+                <div class="message">تم بنجاح</div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="img">
+                <img src="../icon/images-removebg-preview.png" alt="logo-aleppo" width="80px">
+            </div>
+            <p>جميع الحقوق محفوظة لصالح جامعة حلب</p>
+            <div></div>
+        </div>
+    </div>
+</body>
+<!-- javaScript -->
+ <script src="control.js"></script>
+</html>
