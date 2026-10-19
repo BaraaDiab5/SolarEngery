@@ -185,14 +185,6 @@ localStorage.setItem('rooms',JSON.stringify(roomAvailable));
 
 
 const listDays = document.querySelector('.listDays');
-const span = document.querySelectorAll('span');
-
-span.forEach(span =>{
-    span.addEventListener('click' , () =>{
-        if(span.classList.contains('active')) span.classList.remove('active');
-        else span.className = 'active';
-    })
-})
 
 const renderSchedule = () => {
     const currentDayData = scheduleData[listDays.value];
@@ -240,3 +232,12 @@ const renderSchedule = () => {
 };
 listDays.addEventListener('change', renderSchedule);
 renderSchedule();
+
+const span = document.querySelectorAll('span');
+
+span.forEach(span =>{
+    span.addEventListener('click' , () =>{
+        if(span.classList.contains('active')) span.classList.remove('active');
+        else span.className = 'active';
+    })
+})
