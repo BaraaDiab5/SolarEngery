@@ -363,7 +363,7 @@
 }
 .controlRoom .content .select .listSelect {
     background-color: var(--primary-orange);
-    width: 80%;
+    width: 100%;
     padding: 10px 15px 10px 100px ;
     color: var(--text-white);
     font-size: 20px;
