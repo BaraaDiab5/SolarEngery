@@ -185,45 +185,6 @@ localStorage.setItem('rooms',JSON.stringify(roomAvailable));
 
 
 const listDays = document.querySelector('.listDays');
-const table = document.querySelector('.tableContent');
-
-
-const renderSchedule = () =>{
-    table.innerHTML = ``;
-    const currentDayData = scheduleData[listDays.value];
-
-    if(listDays.value === 'saturday'){
-        divNull = document.createElement('div');
-        divNull.innerHTML = `<p>لاتوجد محاضرات اليوم</p>`;
-        divNull.className = 'divNull';
-        table.appendChild(divNull);
-    }
-
-    else{
-        currentDayData.forEach(room => {
-            if (!room.lectures.includes(true)) return; 
-            else {
-                const row = document.createElement('div');
-                row.className = 'row';
-            
-                const divName = document.createElement('p');
-                divName.className = 'name';
-                divName.innerHTML = `${room.name}`;
-                row.appendChild(divName);
-            
-                room.lectures.forEach(ele =>{
-                    const spanRow = document.createElement('span');
-                    if (ele === true) spanRow.className = 'active';
-                    row.appendChild(spanRow);
-                })
-                table.appendChild(row);
-            }
-        });
-    }
-}   
-listDays.addEventListener('change', renderSchedule);
-renderSchedule(); 
-
 const span = document.querySelectorAll('span');
 
 span.forEach(span =>{
@@ -233,3 +194,49 @@ span.forEach(span =>{
     })
 })
 
+const renderSchedule = () => {
+    const currentDayData = scheduleData[listDays.value];
+    const nameHeadCol = document.querySelector('.table-head .column.name-head');
+    const lectureColumns = document.querySelectorAll('.table-head .column:not(.name-head)');
+    const tableContainer = document.querySelector('.table');
+
+    document.querySelectorAll('.table-head .column').forEach(col => {
+        const title = col.querySelector('.column-title');
+        col.innerHTML = '';
+        if (title) col.appendChild(title);
+    });
+
+    const existingNull = document.querySelector('.divNull');
+    if (existingNull) existingNull.remove();
+
+    if (listDays.value === 'saturday') {
+        const divNull = document.createElement('div');
+        divNull.innerHTML = `<p>لاتوجد محاضرات اليوم</p>`;
+        divNull.className = 'divNull';
+        tableContainer.appendChild(divNull);
+        return;
+    }
+
+    if (currentDayData) {
+        currentDayData.forEach(room => {
+            if (!room.lectures || !room.lectures.includes(true)) return;
+
+            const divName = document.createElement('p');
+            divName.className = 'name';
+            divName.textContent = room.name;
+            nameHeadCol.appendChild(divName);
+
+            room.lectures.forEach((isActive, index) => {
+                if (lectureColumns[index]) {
+                    const spanRow = document.createElement('span');
+                    if (isActive === true) {
+                        spanRow.className = 'active';
+                    }
+                    lectureColumns[index].appendChild(spanRow);
+                }
+            });
+        });
+    }
+};
+listDays.addEventListener('change', renderSchedule);
+renderSchedule();

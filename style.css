@@ -345,8 +345,15 @@
     margin: 30px auto;
 }
 .controlRoom .content{
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
     padding: 0 10px;
+}
+.controlRoom .content .select{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .controlRoom .content .select p{
     color: var(--text-white);
@@ -356,7 +363,7 @@
 }
 .controlRoom .content .select .listSelect {
     background-color: var(--primary-orange);
-    width: 100%;
+    width: 80%;
     padding: 10px 15px 10px 100px ;
     color: var(--text-white);
     font-size: 20px;
@@ -394,7 +401,7 @@
 .controlRoom .content .time{
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: 30px 10px ;
     color: var(--text-white);
 }

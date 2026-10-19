@@ -1,250 +1,297 @@
 :root{
     /* Colors */
-  --bg-dark: #231f20;
-  --bg-darker: #191717;
-  --primary-orange: #e06d3b;
-  --primary-orange-hover: #c85a2b;
-  --text-white: #ffffff;
-  --card-light: #ececec;
-  --border-light: #c8c8c8;
-
-  /* Fonts & Sizing */
-  --font-family: 'Cairo', sans-serif;
-  --border-radius-sm: 10px;
-  --border-radius-md: 18px;
-  --border-radius-ms:32px;
-  --border-radius-lg: 50px;
-}
-.scheduls .content .table::-webkit-scrollbar {
-    display: none;
-}
-.scheduls .content .table {
-    -ms-overflow-style: none;  
-    scrollbar-width: none;    
-}
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    box-sizing: border-box;
-    direction: rtl;
-}
-
-@media (min-width: 1050px) {
-    .scheduls{
-       width: 500px !important;   
-       border-radius: 36px; 
-       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);  
-       margin: 0 auto;   
-   }
-}
-.scheduls{
-    background-color: var(--bg-dark);
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center; 
-}
-.scheduls .head .back{
-    padding: 10px 10px 10px 25px;
-    font-size: 16px;
-    font-weight: 900;
-}
-.scheduls .head p{
-    flex: 1;
-    font-size: 18px;
-    font-weight: 700;
-    padding-right: 20px;
-}
-.scheduls .head{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    color: var(--text-white);
-    margin:15px 0;
-    text-align: right;
-}
-.scheduls .content{
-    width: 100%;
-    padding: 0px 15px;
-}
-.scheduls .content .con-head {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-white);
-}
-.scheduls .listDays {
-    background-color: var(--text-white);
-    width: 35%;
-    padding: 8px 20px 8px 10px;
-    color: var(--bg-dark);
-    font-size: 16px;
-    font-weight: 700;
-    border-radius: var(--border-radius-lg);
-}
-.scheduls .content .table{
-    padding-bottom: 12px;
-    overflow-x: auto !important;
-}
-.scheduls .content .table .table-head{
-    min-width: 680px;
-    display: flex;
-    gap: 7px;
-    color: var(--text-white);
-    font-size: 14px;
-    font-weight: bold;
-    margin: 20px 0px 10px 0px;
-}
-.scheduls .content .table .table-head div{
-    white-space: nowrap;
-    background-color: #554e4a;
-    padding: 10px 10px ;
-    border-radius: var(--border-radius-ms);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.scheduls .content .table .table-head .name-head {
-    width: 25%;                  
-    background-color: var(--primary-orange);
-    position: sticky;
-    right: 0;
-    z-index: 3;
-}
-.scheduls .content .table .table-head .name-head,
-.scheduls .content .table .tableContent .name {
-    flex: 2;
-    min-width: 140px; 
-    max-width: 140px; 
-}
-.scheduls .content .table .tableContent .row{
-    min-width: 680px;
-    display: flex;
-    gap: 7px;
-}
-.scheduls .content .table .tableContent .name{
-    width: 25%;              
-    background-color: var(--text-white);
-    color: var(--bg-dark);
-    font-size: 14px;
-    font-weight: bolder;
-    padding: 2px 5px;
-    border-radius: var(--border-radius-ms);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    position: sticky;
-    right: 0;
-    z-index: 3;
-}
-.scheduls .content .table .tableContent span{
-    display: inline-block;
-    flex: 1;
-    flex-shrink: 0;
-    height: 45px;
-    /* margin: 10px 7px 10px 36px; */
-    margin: 10px;
-    border-radius: var(--border-radius-sm);
-    background-color:var(--text-white);
-    transition: all .7s;
-}
-.scheduls .content .table .tableContent .active{
-    background-color: var(--primary-orange);
-}
-.scheduls .content .submit{
-    display: flex;
-    justify-content: space-around;
-    color: var(--text-white);
-    position: relative;
-}
-.scheduls .content .submit p{
-    font-size: 18px ;
-    background-color: var(--primary-orange);
-    border-radius: var(--border-radius-sm);
-    padding: 5px 20px; 
-    cursor: pointer;
-}
-.scheduls .content .submit .message{
-    background-color: var(--text-white);
-    border-radius: var(--border-radius-sm);
-    color: var(--bg-dark);
-    font-size: 20px;
-    font-weight: bold;
-    padding: 5px 20px; 
-    display: none;
-    position: absolute;
-    bottom: 26%;
-    left: 50%;
-    transform: translate(-50%, -26%);
-    animation: translate .7s ease;
-    transition: all .7s;
-}
-@keyframes translate {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-.scheduls .listDays option {
-    border-bottom: 1px var(--primary-orange) solid;
-    display: flex;
-    justify-content: center;
-}
-.scheduls .listDays option:checked{
-    background-color: var(--primary-orange);
-}
-.listDays::picker-icon {
-    transition: transform 0.2s;
-}
-.listDays:open::picker-icon {
-    transform: rotate(180deg);
-}
- .listDays , ::picker(select) {
-    appearance: base-select;
-}
-::picker(select)  {
-  background-color: var(--text-white) !important;
-  border-radius: 8px !important;
-  padding: 5px !important;
-  color: var(--bg-dark);
-  text-align: center;
-}
- .scheduls .listDays:focus{
-    outline: none;
-}
-.foot{
-    width: 100%;
-    margin-top: 10px;
-}
-.foot p{
-    font-size: 13px;
-    font-weight: 700;
+    --bg-dark: #231f20;
+    --bg-darker: #191717;
+    --primary-orange: #e06d3b;
+    --primary-orange-hover: #c85a2b;
+    --text-white: #ffffff;
+    --card-light: #ececec;
+    --border-light: #c8c8c8;
+  
+    /* Fonts & Sizing */
+    --font-family: 'Cairo', sans-serif;
+    --border-radius-sm: 10px;
+    --border-radius-md: 18px;
+    --border-radius-ms: 32px;
+    --border-radius-lg: 50px;
+  }
+  
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+  
+  *{
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      box-sizing: border-box;
+      direction: rtl;
+  }
+  
+  .scheduls .content .table::-webkit-scrollbar {
+      display: none;
+  }
+  .scheduls .content .table {
+      -ms-overflow-style: none;  
+      scrollbar-width: none;    
+  }
+  
+  @media (min-width: 1050px) {
+      .scheduls{
+         width: 500px !important;   
+         border-radius: 36px; 
+         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);  
+         margin: 0 auto;   
+     }
+  }
+  
+  .scheduls{
+      background-color: var(--bg-dark);
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; 
+  }
+  
+  .scheduls .head{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: var(--text-white);
+      margin: 15px 0;
+      text-align: right;
+  }
+  
+  .scheduls .head .back{
+      padding: 10px 10px 10px 25px;
+      font-size: 16px;
+      font-weight: 900;
+  }
+  
+  .scheduls .head p{
+      flex: 1;
+      font-size: 18px;
+      font-weight: 700;
+      padding-right: 20px;
+  }
+  
+  .scheduls .content{
+      width: 100%;
+      padding: 0px 15px;
+  }
+  
+  .scheduls .content .con-head {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-white);
+  }
+  
+  .scheduls .listDays {
+      background-color: var(--text-white);
+      width: 35%;
+      padding: 8px 20px 8px 10px;
+      color: var(--bg-dark);
+      font-size: 16px;
+      font-weight: 700;
+      border-radius: var(--border-radius-lg);
+  }
+  
+  /* حاوية الجدول */
+  .scheduls .content .table{
+      padding-bottom: 12px;
+      overflow-x: auto !important;
+      width: 100%;
+  }
+  
+  /* ترويسة الجدول الحاوية للأعمدة */
+  .scheduls .content .table .table-head{
+      min-width: max-content;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--text-white);
+      margin: 20px 0px 10px 0px;
+  }
+  
+  /* تنسيق العمود - شفاف بدون خلفية رمادية طويلة */
+  .column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 85px;
+      width: 85px;
+      background-color: transparent !important;
+      padding: 0 !important;
+  }
+  
+  /* ترويسة عنوان المحاضرة أعلى كل عمود */
+  .column-title {
+      width: 100%;
+      height: 45px;
+      white-space: nowrap;
+      background-color: #554e4a;
+      color: var(--text-white);
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: var(--border-radius-ms);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  /* تثبيت عمود القاعات على اليمين */
+  .column.name-head {
+      flex: 0 0 135px;
+      width: 135px;
+      position: sticky;
+      right: 0;
+      z-index: 10;
+  }
+  
+  .column.name-head .column-title {
+      background-color: var(--primary-orange);
+      color: var(--text-white);
+  }
+  
+  /* كرت اسم القاعة */
+  .scheduls .content .table .column .name{
+      width: 100%;              
+      height: 45px;
+      background-color: var(--text-white);
+      color: var(--bg-dark);
+      font-size: 14px;
+      font-weight: bolder;
+      border-radius: var(--border-radius-ms);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scheduls .content .table .column span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50%;
+      height: 45px;
+      border-radius: var(--border-radius-sm);
+      background-color: var(--text-white);
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+  }
+  
+  .scheduls .content .table .column span.active{
+      background-color: var(--primary-orange);
+  }
+  
+  .scheduls .content .submit{
+      display: flex;
+      justify-content: space-around;
+      color: var(--text-white);
+      position: relative;
+      margin-top: 15px;
+  }
+  
+  .scheduls .content .submit p{
+      font-size: 18px ;
+      background-color: var(--primary-orange);
+      border-radius: var(--border-radius-sm);
+      padding: 5px 20px; 
+      cursor: pointer;
+  }
+  
+  .scheduls .content .submit .message{
+      background-color: var(--text-white);
+      border-radius: var(--border-radius-sm);
+      color: var(--bg-dark);
+      font-size: 20px;
+      font-weight: bold;
+      padding: 5px 20px; 
+      display: none;
+      position: absolute;
+      bottom: 26%;
+      left: 50%;
+      transform: translate(-50%, -26%);
+      animation: translate .7s ease;
+      transition: all .7s;
+  }
+  
+  @keyframes translate {
+      0%{
+          opacity: 0;
+      }
+      100%{
+          opacity: 1;
+      }
+  }
+  
+  .scheduls .listDays option {
+      border-bottom: 1px var(--primary-orange) solid;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .scheduls .listDays option:checked{
+      background-color: var(--primary-orange);
+  }
+  
+  .listDays::picker-icon {
+      transition: transform 0.2s;
+  }
+  
+  .listDays:open::picker-icon {
+      transform: rotate(180deg);
+  }
+  
+  .listDays , ::picker(select) {
+      appearance: base-select;
+  }
+  
+  ::picker(select)  {
+    background-color: var(--text-white) !important;
+    border-radius: 8px !important;
+    padding: 5px !important;
     color: var(--bg-dark);
     text-align: center;
-}
-.foot div{
-    width: 100%;
-    margin-top: 10px;
-    height: 60px;
-    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-    background-color: var(--bg-darker);
-}
- .scheduls .foot div{
-    background-color: var(--text-white);
-    height: 30px;
-}
-.divNull {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-white);
-    height: 60vh;
-}
+  }
+  
+  .scheduls .listDays:focus{
+      outline: none;
+  }
+  
+  .foot{
+      width: 100%;
+      margin-top: 10px;
+  }
+  
+  .foot p{
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bg-dark);
+      text-align: center;
+  }
+  
+  .foot div{
+      width: 100%;
+      margin-top: 10px;
+      height: 60px;
+      border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+      background-color: var(--bg-darker);
+  }
+  
+  .scheduls .foot div{
+      background-color: var(--text-white);
+      height: 30px;
+  }
+  
+  .divNull {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--text-white);
+      height: 60vh;
+  }
