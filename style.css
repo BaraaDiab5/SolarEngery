@@ -345,7 +345,7 @@
     margin: 30px auto;
 }
 .controlRoom .content{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -399,6 +399,7 @@
     background-color: var(--primary-orange);
 }
 .controlRoom .content .time{
+    width: 90%;
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
